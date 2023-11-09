@@ -5,25 +5,54 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4 mb-5">Welcome</h1>
 
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-2 d-none d-md-block">
+            </div>
 
-    <form id="myForm" method="post" action="@Url.Action("Index", "Home")">
-        <label for="inputData">Input Data:</label>
+            <div class="col-12 col-md-8 ">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Input</h4>
+                        <form id="myForm" method="post" action="@Url.Action("Index", "Home")">
+                            <div class="mb-3">
+                                <label for="inputData" class="form-label ">Input Data:</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="dollarSign">$</span>
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="inputData" 
+                                           value="@Model?.ListPrice"
+                                           name="inputData" 
+                                           placeholder="Discount"
+                                           aria-describedby="dollarSign">
+                                </div>
+                            </div>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text">$</span>
-            <input type="text" 
-                   id="inputData" 
-                   value="@Model?.ListPrice"
-                   name="inputData" 
-                   class="form-control" 
-                   placeholder="Discount" 
-                   aria-label="Discount">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <h4>Output</h4>
+
+                    </div>
+                 </div>
+
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-secondary">Reset</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+
+            <div class="col-2 d-none d-md-block">
+            </div>
         </div>
-
-        <button type="submit">Submit</button>
-    </form>
+</div>
+    
 
 @* 
     <script>
@@ -70,5 +99,5 @@
             });
         });
     </script> *@
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <a class="d-block mt-5" href="@Url.Action("Index", "Home")">View 2</a>
 </div>
