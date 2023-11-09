@@ -22,7 +22,7 @@
         <button type="submit">Submit</button>
     </form>
 
-
+@* 
     <script>
         document.getElementById("myForm").addEventListener("submit", function (event) {
             event.preventDefault();
@@ -44,7 +44,28 @@
                     console.error('Error calling controller action:', error);
                 });
         });
-    </script>
+    </script> *@
+@* 
+    <script>
+        $(document).ready(function () {
+            $("#myForm").submit(function (event) {
+                event.preventDefault();
 
+                // Perform POST request using jQuery
+                $.post({
+                    url: $(this).attr("action"),
+                    data: $(this).serialize(),
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log(data);
+                        // Handle the response as needed
+                    },
+                    error: function (error) {
+                        console.error('Error calling controller action:', error);
+                    }
+                });
+            });
+        });
+    </script> *@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
