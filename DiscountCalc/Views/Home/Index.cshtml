@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+
+    <form id="myForm" method="post" action="@Url.Action("MyPostAction", "Home")">
+        <label for="inputData">Input Data:</label>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input type="text" 
+                   id="inputData" 
+                   name="inputData" 
+                   class="form-control" 
+                   placeholder="Discount" 
+                   aria-label="Discount">
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Perform your POST request using Fetch API or another method
+            fetch(this.action, {
+                method: this.method,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(new FormData(this)).toString(),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    // Handle the response as needed
+                })
+                .catch(error => {
+                    console.error('Error calling controller action:', error);
+                });
+        });
+    </script>
+
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
