@@ -16,16 +16,51 @@
                 <div class="card">
                     <div class="card-body">
                         <h4>Input</h4>
-                        <form id="myForm" method="post" action="@Url.Action("Index", "Home")">
+                        <form class="needs-validation was-validated" novalidate="" id="myForm" method="post" action="@Url.Action("Index", "Home")">
                             <div class="mb-3">
-                                <label for="inputData" class="form-label ">Input Data:</label>
+                                <label for="inputData" class="form-label ">List Price:</label>
                                 <div class="input-group">
                                     <span class="input-group-text" id="dollarSign">$</span>
                                     <input type="text" 
                                            class="form-control" 
-                                           id="inputData" 
+                                           id="ListPrice"
                                            value="@Model?.ListPrice"
-                                           name="inputData" 
+                                           name="ListPrice"
+                                           required
+                                           placeholder="List Price"
+                                           aria-describedby="dollarSign">
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please enter List price.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="inputData" class="form-label ">Input Data:</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="dollarSign">$</span>
+                                    <input type="text"
+                                           class="form-control"
+                                           id="inputData"
+                                           value="@Model?.ListPrice"
+                                           name="inputData"
+                                           placeholder="Discount"
+                                           aria-describedby="dollarSign">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="inputData" class="form-label ">Input Data:</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="dollarSign">$</span>
+                                    <input type="text"
+                                           class="form-control"
+                                           id="inputData"
+                                           value="@Model?.ListPrice"
+                                           name="inputData"
                                            placeholder="Discount"
                                            aria-describedby="dollarSign">
                                 </div>
