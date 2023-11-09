@@ -20,6 +20,14 @@ namespace DiscountCalc.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Index([FromForm] string inputData)
+        {
+            var result = _calculateService.Add(1,2);
+            // Process the posted data and return a response
+            //return Json($"Data received successfully inputData={inputData} calcResult={result}");
+            return View("Index", new DiscountResult { ListPrice = result });
+        }
 
         public IActionResult Privacy()
         {
@@ -32,12 +40,6 @@ namespace DiscountCalc.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        [HttpPost]
-        public IActionResult MyPostAction([FromForm] string inputData)
-        {
-            var result = _calculateService.Add(1,2);
-            // Process the posted data and return a response
-            return Json($"Data received successfully inputData={inputData} calcResult={result}");
-        }
+
     }
 }

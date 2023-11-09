@@ -21,24 +21,24 @@ $(document).ready(function () {
     //    });
     //});
 
-    $(document).ready(function () {
-        $("#myForm").submit(function (event) {
-            event.preventDefault();
+    //$(document).ready(function () {
+    //    $("#myForm").submit(function (event) {
+    //        event.preventDefault();
 
-            // Perform POST request using jQuery $.ajax()
-            $.ajax({
-                type: "POST",
-                url: $(this).attr("action"),
-                data: $(this).serialize(),
-                dataType: 'json',
-                success: function (data) {
-                    console.log(data);
-                    // Handle the response as needed
-                },
-                error: function (error) {
-                    console.error('Error calling controller action:', error);
-                }
-            });
-        });
-    });
+    //        // Perform POST request using jQuery $.ajax()
+    //        $.ajax({
+    //            type: "POST",
+    //            url: $(this).attr("action"),
+    //            data: $(this).serialize(),
+    //            dataType: 'json',
+    //            success: function (data) {
+    //                console.log(data);
+    //                // Handle the response as needed
+    //            },
+    //            error: function (error) {
+    //                console.error('Error calling controller action:', error);
+    //            }
+    //        });
+    //    });
+    //});
 });

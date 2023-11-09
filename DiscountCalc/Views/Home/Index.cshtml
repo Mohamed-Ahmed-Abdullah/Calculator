@@ -1,18 +1,21 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model DiscountCalc.Models.DiscountResult
+
+@{
+    ViewData["Title"] = "Home Page";    
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
 
 
-    <form id="myForm" method="post" action="@Url.Action("MyPostAction", "Home")">
+    <form id="myForm" method="post" action="@Url.Action("Index", "Home")">
         <label for="inputData">Input Data:</label>
 
         <div class="input-group mb-3">
             <span class="input-group-text">$</span>
             <input type="text" 
                    id="inputData" 
+                   value="@Model?.ListPrice"
                    name="inputData" 
                    class="form-control" 
                    placeholder="Discount" 
